@@ -1,0 +1,29 @@
+/*!
+global > color
+------------------------------
+*/
+:root {
+    --color-white: #ffffff;
+    --color-white20: #ffffff33;
+    --color-white50: #ffffff80;
+    --color-white70: #ffffffb3;
+
+    --color-dark-gray: #333333ff;
+    --color-dark-gray20: #33333333;
+    --color-dark-gray50: #33333380;
+
+    --color-primary-pastel: #e9edf7ff;
+
+    --color-primary: #1b52b0ff;
+    --color-primary10: #1b52b01a;
+    --color-primary20: #1b52b033;
+    --color-primary80: #1b52b0cc;
+
+    --color-secondary: #ee9527ff;
+    --color-secondary5: #ee95270d;
+    --color-secondary70: #ee9527b3;
+
+    --color-background: linear-gradient(270deg, #e9edf7, #ffffff);
+    --color-file-select: linear-gradient(0deg, #eeeeeeff, #ffffffff);
+    --color-link: #007cff;
+}

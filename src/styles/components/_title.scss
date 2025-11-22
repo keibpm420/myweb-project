@@ -1,0 +1,61 @@
+/*!
+component > title
+------------------------------
+*/
+.c-title-level2 {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-top: 4px;
+    margin-bottom: 40px;
+
+    > span {
+        display: block;
+    }
+
+    &--white {
+        color: var(--color-white);
+    }
+}
+
+.c-title-level2-english {
+    font-family: var(--font-family-inter);
+    font-size: 12px;
+    line-height: 1;
+    text-transform: uppercase;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 4px;
+    color: var(--color-primary);
+
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 8px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background-color: var(--color-primary);
+    }
+
+    &--white {
+        color: var(--color-white);
+
+        &::before {
+            background-color: var(--color-white);
+        }
+    }
+}
+
+.c-title-level3 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--color-white);
+}
+
+.c-title-level4 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 2;
+}

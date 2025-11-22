@@ -14,7 +14,7 @@ const Header = () => {
 
     return (
         <header className="header">
-            <div className="container">
+            <div className="header-wrap">
                 <h1 className="header-heading">
                     <Link className="header-logo" to="/">
                         <img src="https://placehold.jp/200x30.png" alt="ダミー画像" width="200" height="30" />
@@ -22,11 +22,11 @@ const Header = () => {
                     <p className="header-text">採用サイト</p>
                 </h1>
 
-                <div className="header-button-list">
-                    <Link className="c-header-button c-header-button-info" to="/information">
+                <div className="header-cta-wrap">
+                    <Link className="header-cta header-cta--info" to="/information">
                         <span>募集要項</span>
                     </Link>
-                    <Link className="c-header-button c-header-button-entry" to="/entry">
+                    <Link className="header-cta header-cta--entry" to="/entry">
                         <span>エントリー</span>
                     </Link>
 
@@ -75,37 +75,43 @@ const Header = () => {
 
                 <ul className="header-nav-list">
                     <li>
-                        <a href="#about">私たちについて</a>
+                        <a onClick={toggleMenu} href="#about">
+                            私たちについて
+                        </a>
                     </li>
                     <li>
-                        <a href="#interview">社員の声</a>
+                        <a onClick={toggleMenu} href="#interview">
+                            社員の声
+                        </a>
                     </li>
                     <li>
-                        <a href="#topics">積極採用</a>
+                        <a onClick={toggleMenu} href="#topics">
+                            積極採用
+                        </a>
                     </li>
                     <li>
-                        <a href="#workplace">はたらく環境</a>
+                        <a onClick={toggleMenu} href="#workplace">
+                            はたらく環境
+                        </a>
                     </li>
                     <li>
-                        <a href="#flow">選考フロー</a>
+                        <a onClick={toggleMenu} href="#flow">
+                            選考フロー
+                        </a>
                     </li>
                     <li>
-                        <a href="#faq">よくあるご質問</a>
+                        <a onClick={toggleMenu} href="#faq">
+                            よくあるご質問
+                        </a>
                     </li>
                 </ul>
 
-                <div className="header-nav-button-list">
-                    <Link
-                        className="c-header-button c-header-button-info c-header-button--large"
-                        to="/information"
-                    >
+                <div className="header-nav-cta-wrap">
+                    <Link className="header-cta header-cta--info header-cta--large" to="/information">
                         <span>募集要項</span>
                     </Link>
 
-                    <Link
-                        className="c-header-button c-header-button-entry c-header-button--large"
-                        to="/entry"
-                    >
+                    <Link className="header-cta header-cta--entry header-cta--large" to="/entry">
                         <span>エントリー</span>
                     </Link>
                 </div>
