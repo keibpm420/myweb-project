@@ -24,7 +24,7 @@ component > title
     line-height: 1;
     text-transform: uppercase;
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 8px 1fr;
     align-items: center;
     gap: 4px;
     color: var(--color-primary);
@@ -32,7 +32,7 @@ component > title
     &::before {
         content: '';
         display: inline-block;
-        width: 8px;
+        width: 100%;
         aspect-ratio: 1/1;
         border-radius: 50%;
         background-color: var(--color-primary);
@@ -55,7 +55,23 @@ component > title
 }
 
 .c-title-level4 {
+    margin-top: 80px;
+    margin-bottom: 24px;
     font-size: 24px;
     font-weight: 700;
     line-height: 2;
+
+    display: grid;
+    grid-template-columns: 8px 1fr;
+    align-items: center;
+    gap: 4px;
+
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background-color: var(--color-primary);
+    }
 }

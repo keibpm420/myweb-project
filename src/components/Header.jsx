@@ -40,8 +40,8 @@ const Header = () => {
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                width="24px"
-                                height="24px"
+                                width="20px"
+                                height="20px"
                                 viewBox="0 -960 960 960"
                             >
                                 <path d="M144-264v-72h672v72H144Zm0-180v-72h672v72H144Zm0-180v-72h672v72H144Z" />
