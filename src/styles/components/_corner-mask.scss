@@ -1,0 +1,32 @@
+.c-corner-mask {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    z-index: -1 !important;
+    top: 0;
+    left: 0;
+
+    &--primary {
+        background-color: var(--color-primary);
+    }
+
+    &--secondary {
+        background-color: var(--color-secondary);
+    }
+
+    &--primary10 {
+        background-color: var(--color-primary10);
+    }
+
+    &--primary20 {
+        background-color: var(--color-primary20);
+    }
+
+    &--primary-pastel {
+        background-color: var(--color-primary-pastel);
+    }
+
+    &--white {
+        background-color: var(--color-white);
+    }
+}

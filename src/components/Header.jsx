@@ -69,7 +69,7 @@ const Header = () => {
                             viewBox="0 -960 960 960"
                         >
                             <path d="m291-240-51-51 189-189-189-189 51-51 189 189 189-189 51 51-189 189 189 189-51 51-189-189-189 189Z" />
-                        </svg>{' '}
+                        </svg>
                     </button>
                 </div>
 
@@ -107,11 +107,19 @@ const Header = () => {
                 </ul>
 
                 <div className="header-nav-cta-wrap">
-                    <Link className="header-cta header-cta--info header-cta--large" to="/information">
+                    <Link
+                        onClick={toggleMenu}
+                        className="header-cta header-cta--info header-cta--large"
+                        to="/information"
+                    >
                         <span>募集要項</span>
                     </Link>
 
-                    <Link className="header-cta header-cta--entry header-cta--large" to="/entry">
+                    <Link
+                        onClick={toggleMenu}
+                        className="header-cta header-cta--entry header-cta--large"
+                        to="/entry"
+                    >
                         <span>エントリー</span>
                     </Link>
                 </div>

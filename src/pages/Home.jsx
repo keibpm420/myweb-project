@@ -11,9 +11,10 @@ import BookRoundedIcon from '@mui/icons-material/BookRounded';
 import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
 import DesktopWindowsRoundedIcon from '@mui/icons-material/DesktopWindowsRounded';
 import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
-    const options = {
+    const option_auto_scroll = {
         type: 'loop',
         arrows: false,
         pagination: false,
@@ -30,7 +31,11 @@ const Home = () => {
     return (
         <main className="top">
             <div className="top-mv" id="mv">
-                <Splide options={options} extensions={{ AutoScroll }} aria-label="メインビジュアル">
+                <Splide
+                    options={option_auto_scroll}
+                    extensions={{ AutoScroll }}
+                    aria-label="メインビジュアル"
+                >
                     <SplideSlide>
                         <div className="top-mv-img">
                             <img
@@ -78,6 +83,13 @@ const Home = () => {
                     <div className="break" />
                     <span className="top-mv-copy-text">クリエイティブの未来図。</span>
                 </div>
+
+                <a href="" className="top-mv-news">
+                    <div className="top-mv-news-inner">
+                        <span className="top-mv-news-date">2025/3/1 13:00</span>
+                        <p className="top-mv-news-title">社員インタビューを新たに追加しました</p>
+                    </div>
+                </a>
             </div>
 
             <section className="top-read" id="read">
@@ -95,7 +107,11 @@ const Home = () => {
                 </p>
 
                 <div className="top-read-carousel">
-                    <Splide options={options} extensions={{ AutoScroll }} aria-label="キャッチコピー">
+                    <Splide
+                        options={option_auto_scroll}
+                        extensions={{ AutoScroll }}
+                        aria-label="キャッチコピー"
+                    >
                         <SplideSlide>
                             <p className="top-read-carousel-text">Let's grow together</p>
                         </SplideSlide>
@@ -223,23 +239,114 @@ const Home = () => {
             </section>
 
             <section className="top-interview" id="interview">
+                <div className="c-corner-mask c-corner-mask--primary10"></div>
                 <div className="l-container">
                     <span className="c-title-level2-english">interview</span>
                     <h2 className="c-title-level2">社員の声</h2>
+                    <p className="top-interview-text">
+                        各事業部ではたらく社員のリアルな声とともに、
+                        <br />
+                        1日のスケジュールや部署の雰囲気、具体的な業務内容などの情報をお届けします。
+                    </p>
+                </div>
+
+                <div className="top-interview-carousel">
+                    <Splide
+                        options={{
+                            type: 'loop', // ループさせる
+                            perPage: 5, // 1ページに表示するスライド数
+                            perMove: 1, // 移動するスライド数
+                            gap: '1rem', // スライド間の間隔
+                            autoplay: true, // 自動再生
+                            pagination: false,
+                        }}
+                    >
+                        <SplideSlide>
+                            <img src="https://placehold.jp/400x500.png" alt="" width="500" height="500" />
+                        </SplideSlide>
+                        <SplideSlide>
+                            <img src="https://placehold.jp/400x500.png" alt="" width="500" height="500" />
+                        </SplideSlide>
+                        <SplideSlide>
+                            <img src="https://placehold.jp/400x500.png" alt="" width="500" height="500" />
+                        </SplideSlide>
+                        <SplideSlide>
+                            <img src="https://placehold.jp/400x500.png" alt="" width="500" height="500" />
+                        </SplideSlide>
+                        <SplideSlide>
+                            <img src="https://placehold.jp/400x500.png" alt="" width="500" height="500" />
+                        </SplideSlide>
+                        <SplideSlide>
+                            <img src="https://placehold.jp/400x500.png" alt="" width="500" height="500" />
+                        </SplideSlide>
+                        <SplideSlide>
+                            <img src="https://placehold.jp/400x500.png" alt="" width="500" height="500" />
+                        </SplideSlide>
+                    </Splide>
                 </div>
             </section>
 
             <section className="top-topics" id="topics">
+                <div className="c-corner-mask c-corner-mask--primary20"></div>
+
                 <div className="l-container">
                     <span className="c-title-level2-english c-title-level2-english--white">topics</span>
                     <h2 className="c-title-level2 c-title-level2--white">
                         <span>バックエンドエンジニア</span>
                         <span>積極採用中</span>
                     </h2>
+
+                    <div className="top-topics-inner">
+                        <div className="top-topics-head">
+                            <div className="top-topics-head-inner">
+                                <p>
+                                    私たちは、より良いサービスを提供するため、バックエンドエンジニアを積極的に募集しています。
+                                </p>
+                                <p>
+                                    新しい技術に挑戦し、チームと共に成長したい方を歓迎します。あなたのスキルを活かし、未来を一緒に築きませんか？
+                                </p>
+                                <p>挑戦を楽しめる方、ぜひご応募ください。</p>
+                            </div>
+
+                            <div className="top-topics-button-list">
+                                <Link to="/information" className="top-topics-button top-topics-button--info">
+                                    <span>募集要項を見る</span>
+                                    <div className="top-topics-icon">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            height="14px"
+                                            viewBox="0 -960 960 960"
+                                            width="14px"
+                                        >
+                                            <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z" />
+                                        </svg>
+                                    </div>
+                                </Link>
+                                <Link to="/entry" className="top-topics-button top-topics-button--entry">
+                                    <span>エントリーする</span>
+                                    <div className="top-topics-icon">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            height="14px"
+                                            viewBox="0 -960 960 960"
+                                            width="14px"
+                                        >
+                                            <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z" />
+                                        </svg>
+                                    </div>
+                                </Link>
+                            </div>
+                        </div>
+
+                        <div className="top-topics-img">
+                            <img src="https://placehold.jp/768x600.png" alt="ダミー画像" />
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <section className="top-workplace" id="workplace">
+                <div className="c-corner-mask c-corner-mask--primary"></div>
                 <div className="l-container">
                     <span className="c-title-level2-english">workplace</span>
                     <h2 className="c-title-level2">はたらく環境</h2>
@@ -438,6 +545,7 @@ const Home = () => {
             </section>
 
             <section className="top-flow" id="flow">
+                <div className="c-corner-mask c-corner-mask--white"></div>
                 <div className="l-container">
                     <span className="c-title-level2-english">flow</span>
                     <h2 className="c-title-level2">選考フロー</h2>
@@ -484,6 +592,7 @@ const Home = () => {
             </section>
 
             <section className="top-faq" id="faq">
+                <div className="c-corner-mask c-corner-mask--primary-pastel"></div>
                 <div className="l-container">
                     <span className="c-title-level2-english">faq</span>
                     <h2 className="c-title-level2">よくあるご質問</h2>
@@ -493,10 +602,29 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="top-cta" id="cta">
-                <h3 className="c-title-level2-english c-title-level2-english--white">information</h3>
-                <h3 className="c-title-level3">募集概要</h3>
-            </section>
+            <div className="top-cta" id="cta">
+                <div className="top-cta-inner">
+                    <Link to="/information" className="top-cta-button top-cta-button--info">
+                        <div className="">
+                            <span className="c-title-level2-english c-title-level2-english--white">
+                                information
+                            </span>
+                            <h3 className="c-title-level3">募集概要</h3>
+                        </div>
+                        <div className="c-corner-mask c-corner-mask--primary20"></div>
+                    </Link>
+
+                    <Link to="/entry" className="top-cta-button top-cta-button--entry">
+                        <div className="">
+                            <span className="c-title-level2-english c-title-level2-english--white">
+                                entry
+                            </span>
+                            <h3 className="c-title-level3">エントリー</h3>
+                        </div>
+                        <div className="c-corner-mask c-corner-mask--primary"></div>
+                    </Link>
+                </div>
+            </div>
         </main>
     );
 };

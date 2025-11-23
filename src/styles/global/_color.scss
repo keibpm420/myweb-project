@@ -14,15 +14,17 @@ global > color
 
     --color-primary-pastel: #e9edf7ff;
 
-    --color-primary: #1b52b0ff;
-    --color-primary10: #1b52b01a;
-    --color-primary20: #1b52b033;
+    --color-primary: #1b52b0;
+    --color-primary10: #e7f0f9;
+    --color-primary20: #cfe1f3;
+
     --color-primary80: #1b52b0cc;
 
-    --color-secondary: #ee9527ff;
+    --color-secondary: #ee9527;
     --color-secondary5: #ee95270d;
     --color-secondary70: #ee9527b3;
 
+    --color-background-base: linear-gradient(to right, #ffffff, #eef1f9);
     --color-background: linear-gradient(270deg, #e9edf7, #ffffff);
     --color-file-select: linear-gradient(0deg, #eeeeeeff, #ffffffff);
     --color-link: #007cff;
