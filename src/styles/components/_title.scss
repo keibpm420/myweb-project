@@ -45,6 +45,14 @@ component > title
             background-color: var(--color-white);
         }
     }
+
+    &--secondary {
+        color: var(--color-secondary);
+
+        &::before {
+            background-color: var(--color-secondary);
+        }
+    }
 }
 
 .c-title-level3 {
@@ -52,6 +60,10 @@ component > title
     font-weight: 700;
     line-height: 1.4;
     color: var(--color-white);
+
+    &--dark-gray {
+        color: var(--color-dark-gray);
+    }
 }
 
 .c-title-level4 {

@@ -1,0 +1,21 @@
+/*!
+component > form > file
+------------------------------
+*/
+
+.c-form-file-wrap {
+    display: inline-block;
+    padding: 4px 8px;
+    width: 116px;
+    height: 35px;
+    border-radius: 8px;
+    background-image: var(--color-file-select);
+    border: 1px solid var(--color-dark-gray20);
+    font-size: 14px;
+    color: var(--color-dark-gray50);
+    cursor: pointer;
+}
+
+.c-form-file {
+    display: none;
+}

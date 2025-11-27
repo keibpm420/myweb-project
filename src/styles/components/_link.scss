@@ -1,0 +1,32 @@
+.c-link {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 14px;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    text-decoration: underline;
+    transition: 0.3s;
+
+    @media (any-hover: hover) {
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    &::after {
+        content: '';
+        width: 100%;
+        aspect-ratio: 1;
+        background-image: url('../../assets/icon-arrow.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        rotate: 90deg;
+    }
+
+    &--center {
+        margin-inline: auto;
+    }
+}

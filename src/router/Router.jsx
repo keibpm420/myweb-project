@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import Entry from '../pages/Entry';
@@ -13,7 +14,7 @@ import Footer from '../components/Footer';
 
 const Router = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/project">
             <Header />
 
             <Routes>

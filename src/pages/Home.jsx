@@ -1,3 +1,4 @@
+import React from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import '@splidejs/splide/css';
@@ -23,7 +24,7 @@ const Home = () => {
         perPage: 1,
         gap: '32px',
         autoScroll: {
-            speed: 0.5,
+            speed: 0.8,
             pauseOnHover: false,
         },
     };
@@ -84,12 +85,12 @@ const Home = () => {
                     <span className="top-mv-copy-text">クリエイティブの未来図。</span>
                 </div>
 
-                <a href="" className="top-mv-news">
+                <Link to="/news" className="top-mv-news">
                     <div className="top-mv-news-inner">
                         <span className="top-mv-news-date">2025/3/1 13:00</span>
                         <p className="top-mv-news-title">社員インタビューを新たに追加しました</p>
                     </div>
-                </a>
+                </Link>
             </div>
 
             <section className="top-read" id="read">
@@ -115,11 +116,20 @@ const Home = () => {
                         <SplideSlide>
                             <p className="top-read-carousel-text">Let's grow together</p>
                         </SplideSlide>
+                        <SplideSlide>
+                            <p className="top-read-carousel-text">Let's grow together</p>
+                        </SplideSlide>
+                        <SplideSlide>
+                            <p className="top-read-carousel-text">Let's grow together</p>
+                        </SplideSlide>
+                        <SplideSlide>
+                            <p className="top-read-carousel-text">Let's grow together</p>
+                        </SplideSlide>
                     </Splide>
                 </div>
             </section>
 
-            <section className="top-about" id="about">
+            <section className="top-about u-padding" id="about">
                 <div className="l-container">
                     <span className="c-title-level2-english">about</span>
                     <h2 className="c-title-level2">私たちについて</h2>
@@ -238,7 +248,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="top-interview" id="interview">
+            <section className="top-interview u-padding" id="interview">
                 <div className="c-corner-mask c-corner-mask--primary10"></div>
                 <div className="l-container">
                     <span className="c-title-level2-english">interview</span>
@@ -286,7 +296,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="top-topics" id="topics">
+            <section className="top-topics u-padding" id="topics">
                 <div className="c-corner-mask c-corner-mask--primary20"></div>
 
                 <div className="l-container">
@@ -345,7 +355,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="top-workplace" id="workplace">
+            <section className="top-workplace  u-padding" id="workplace">
                 <div className="c-corner-mask c-corner-mask--primary"></div>
                 <div className="l-container">
                     <span className="c-title-level2-english">workplace</span>
@@ -544,7 +554,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="top-flow" id="flow">
+            <section className="top-flow u-padding" id="flow">
                 <div className="c-corner-mask c-corner-mask--white"></div>
                 <div className="l-container">
                     <span className="c-title-level2-english">flow</span>
@@ -591,7 +601,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="top-faq" id="faq">
+            <section className="top-faq u-padding" id="faq">
                 <div className="c-corner-mask c-corner-mask--primary-pastel"></div>
                 <div className="l-container">
                     <span className="c-title-level2-english">faq</span>
