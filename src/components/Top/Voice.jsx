@@ -14,5 +14,3 @@ const Voice = () => {
 };
 
 export default Voice;
-
-import React from "react";
