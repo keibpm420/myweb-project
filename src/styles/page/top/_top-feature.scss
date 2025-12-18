@@ -53,10 +53,14 @@
     gap: 50px;
 
     @include g.mq() {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include g.mq(lg) {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 70px;
+        gap: 64px 32px;
     }
 }
 
@@ -67,9 +71,16 @@
     gap: 12px;
     counter-increment: feature;
     padding: 24px;
+    background-color: var(--color-bg-base);
+    box-shadow: var(--color-box-shadow);
+    border-radius: 16px;
 
     @include g.mq() {
         gap: 16px;
+    }
+
+    @include g.mq(lg) {
+        padding: 32px 48px;
     }
 
     &::before {

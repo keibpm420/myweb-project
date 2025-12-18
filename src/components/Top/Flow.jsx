@@ -38,12 +38,22 @@ const Flow = () => {
                     <h2 className="c-title">ご利用の流れ</h2>
                 </div>
 
+                <p className="top-flow-note">
+                    <span>スクロールできます</span>
+                    <img
+                        src="/img/icon-pointer-right.svg"
+                        width=""
+                        height=""
+                        alt=""
+                        decoding="async"
+                    />
+                </p>
+
                 <div className="top-flow-wrap">
                     <div className="top-flow-list">
                         {flowData.map((item, index) => (
                             <React.Fragment key={index}>
                                 <section className="top-flow-section">
-                                    {/* <p className="top-flow-step">{item.step}</p> */}
                                     <h3 className="top-flow-title">
                                         {item.title}
                                     </h3>

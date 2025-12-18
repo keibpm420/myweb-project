@@ -10,7 +10,7 @@ component > form > label
     &-name {
         font-size: 18px;
         font-weight: bold;
-        color: #2d5579;
+        color: var(--color-deep-blue);
     }
 
     &-require {

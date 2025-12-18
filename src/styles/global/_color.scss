@@ -3,14 +3,65 @@ global > color
 ------------------------------
 */
 :root {
-    --color-base: #333333;
+    --color-base: #1f2937;
     --color-white: #ffffff;
-    --color-primary: #2c7bf1;
-    --color-primary10: #e9f2ff;
-    --color-orange: #fcaf17;
-    --color-red: #f35757;
-    --color-deep-blue: #2d5579;
-    --color-box-shadow: hsla(207, 6%, 61%, 0.15) 0px 7px 18px 0px;
-    --color-gradient: linear-gradient(to left, #0090f1ff, rgb(28, 0, 241));
+    --color-primary: #1f6fd6;
+    --color-primary10: #eef2ff;
+    --color-orange: #f59e0b;
+    --color-red: #ef4444;
+    --color-deep-blue: #102b65;
+    --color-box-shadow: hsla(230, 30%, 40%, 0.15) 0px 10px 25px 0px;
+    --color-gradient: linear-gradient(to right, #1f6fd6, #3a8bfd);
+    --color-bg-base: #f9fafb;
+
+    /* --color-font-base: #2e5579;
+    --color-font-light: #a4b6c6;
     --color-bg-base: #f8fcfd;
+    --color-bg: #f2faff;
+    --color-bg02: #ebf7ff;
+    --color-bg03: #daecf7;
+    --color-white: #fff;
+    --color-blue: #227fd5;
+    --color-blue-hover: #156dc0;
+    --color-blue-gradient: linear-gradient(92deg, #1a75c9 7.9%, #3192eb 94.15%);
+    --color-red: #f35757;
+    --color-blue02: #1098d5;
+    --color-blue03: #13b1d6;
+    --color-blue04: #16c4d3;
+    --color-green: #63d4d4;
+    --color-marker: #bdd1e4;
+    --color-link: #4693ec;
+    --color-border: #e2e3e3;
+    --color-border-light: #eaeaea;
+    --color-border-blue: #4c9be5;
+    --color-black: #122e49;
+    --color-gray: #f5f5f5;
+    --color-box-shadow: #969ca126 0px 7px 18px 0px;
+    --color-box-shadow02: #969ca12e 0px 7px 16px 0px;
+    --color-guidance-gradient: linear-gradient(
+        134deg,
+        #3ec5c5 3.94%,
+        #a5eeee 113.42%
+    );
+    --color-guidance-gradient-hover: linear-gradient(
+        134deg,
+        #16bbbb 3.94%,
+        #90e0e0 113.42%
+    );
+    --color-mentor-gradient: linear-gradient(
+        180deg,
+        #1a75c9 7.9%,
+        #3192eb 94.15%
+    );
+    --color-link-column-bg: #e0effd;
+    --color-link-kindle-bg: #ffe9e9;
+    --color-link-note-bg: #e6fff9;
+    --color-link-udemy-bg: #f6eafe;
+    --color-form-outline: #2c84cb;
+    --color-form-outline02: #b5defb;
+
+    --fixed-header-height: 70px;
+    --font-base: "heisei-kaku-gothic-std", sans-serif;
+    --font-en: "ariana-pro", sans-serif;
+    */
 }
