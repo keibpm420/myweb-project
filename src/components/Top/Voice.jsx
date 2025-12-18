@@ -1,6 +1,6 @@
 import React from "react";
 
-const Interview = () => {
+const Voice = () => {
     return (
         <section className="top-interview u-ptb" id="interview">
             <div className="l-container">
@@ -13,4 +13,6 @@ const Interview = () => {
     );
 };
 
-export default Interview;
+export default Voice;
+
+import React from "react";

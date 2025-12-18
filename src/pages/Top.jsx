@@ -6,7 +6,7 @@ import Service from "../components/Top/Service";
 import Flow from "../components/Top/Flow";
 import Cta from "../components/Top/Cta";
 import Faq from "../components/Top/Faq";
-import Interview from "../components/Top/Interview";
+import Voice from "../components/Top/Voice";
 
 const Top = () => {
     return (
@@ -21,7 +21,7 @@ const Top = () => {
 
             <Flow />
 
-            <Interview />
+            <Voice />
 
             <Faq />
 
