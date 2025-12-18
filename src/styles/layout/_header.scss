@@ -1,272 +1,151 @@
-@use '../global' as g;
+@use "../global" as g;
 
 .l-header {
-    height: 80px;
+    height: var(--header-height);
+    padding-inline: 24px;
     background-color: transparent;
     backdrop-filter: blur(81px);
     position: fixed;
-    z-index: var(--z-index-item);
+    z-index: var(--z-index-header);
     top: 0;
     left: 0;
     right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    &-wrap {
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 40px;
-
-        @include g.mq() {
-            padding-inline: 20px;
-        }
+    @include g.mq() {
+        padding-inline: 40px;
     }
+}
 
-    &-heading {
-        display: flex;
-        align-items: center;
+.l-header-title {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+
+    @include g.mq() {
         gap: 20px;
+    }
+}
 
-        @include g.mq() {
-            gap: 8px;
-        }
+.l-header-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: var(--color-primary);
+    font-family: var(--font-family-english);
+    text-transform: uppercase;
+    width: fit-content;
+    background-image: var(--color-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    @include g.mq(sm) {
+        font-size: 26px;
     }
 
-    &-logo {
-        transition: 0.3s;
-        flex: 1;
+    @include g.mq() {
+        font-size: 32px;
+    }
+}
 
-        img {
-            height: 30px;
+.l-header-button-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 
-            @include g.mq() {
-                height: 24px;
-            }
-        }
+.l-header-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(51, 51, 51, 0.3);
+    width: 100%;
+    height: 100vh;
+}
 
+.l-header-nav {
+    visibility: hidden;
+    opacity: 0;
+    translate: 100% 0;
+    transition: opacity 0.3s, translate 0.3s, visibility 0.3s;
+    position: fixed;
+    inset: 0 0 0 auto;
+    z-index: var(--z-index-menu);
+    background-color: var(--color-white);
+    width: 75%;
+    height: 100vh;
+    padding: 0 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+
+    @include g.mq() {
+        padding: 0 40px 40px 40px;
+        width: 466px;
+    }
+}
+
+.is-header-nav-open {
+    visibility: visible;
+    opacity: 1;
+    translate: 0 0;
+}
+
+.l-header-close-button-wrap {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+
+    @include g.mq() {
+        height: 80px;
+    }
+}
+
+.l-header-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+
+    @include g.mq() {
+        gap: 32px;
+        margin-top: 24px;
+    }
+}
+
+.l-header-item {
+    width: 100%;
+    text-align: center;
+}
+
+.l-header-item a {
+    width: 100%;
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+    transition: opacity 0.2s;
+
+    @include g.mq() {
+        font-size: 14px;
+    }
+
+    @media (any-hover: hover) {
         &:hover {
             opacity: 0.5;
         }
     }
-
-    &-text {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 4px 8px;
-        border-radius: 4px;
-        font-size: 14px;
-        font-weight: 500;
-        border: 1px solid var(--color-dark-gray20);
-
-        @include g.mq() {
-            padding: 4px 6px;
-            font-size: 10px;
-        }
-    }
-
-    &-cta-wrap {
-        display: flex;
-        gap: 8px;
-    }
-
-    .l-header-cta {
-        position: relative;
-        overflow: hidden;
-
-        width: 140px;
-        height: 50px;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 100vh;
-
-        font-size: 14px;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        line-height: 1.4;
-        color: var(--color-white);
-
-        &::before {
-            content: '';
-            position: absolute;
-            background-color: transparent;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            translate: -100% 0;
-            z-index: 0;
-            background-color: var(--color-white);
-            transition: 0.3s;
-        }
-
-        &:hover::before {
-            translate: 0 0;
-        }
-
-        span {
-            position: relative;
-            z-index: 100;
-        }
-
-        &--large {
-            width: 189px;
-            height: 57px;
-
-            @include g.mq() {
-                width: 100%;
-                height: 30px;
-                padding: 24px 20px;
-            }
-        }
-
-        &--info {
-            background-color: var(--color-primary);
-            border: 1px solid var(--color-primary);
-
-            &:hover {
-                color: var(--color-primary);
-            }
-        }
-
-        &--entry {
-            background-color: var(--color-secondary);
-            border: 1px solid var(--color-secondary);
-
-            &:hover {
-                color: var(--color-secondary);
-            }
-        }
-    }
-
-    &-menu-button {
-        position: relative;
-        overflow: hidden;
-        width: 50px;
-        aspect-ratio: 1;
-        border-radius: 100vh;
-        display: grid;
-        place-items: center;
-        background-color: var(--color-white);
-        border: 1px solid var(--color-dark-gray20);
-
-        @include g.mq() {
-            width: 32px;
-        }
-
-        &:hover {
-            border: 1px solid var(--color-dark-gray);
-
-            svg {
-                fill: var(--color-white);
-            }
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            background-color: transparent;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            translate: -100% 0;
-            background-color: var(--color-dark-gray);
-            transition: 0.3s;
-        }
-
-        &:hover::before {
-            translate: 0 0;
-        }
-
-        svg {
-            position: relative;
-            z-index: var(--z-index-item);
-        }
-    }
-
-    &-overlay {
-        background-color: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(2px);
-        position: fixed;
-        inset: 0;
-        width: 100%;
-        height: 100vh;
-        z-index: var(--z-index-overlay);
-    }
-
-    // トグルメニュー
-    &-nav {
-        opacity: 0;
-        visibility: hidden;
-        translate: 100% 0;
-        transition: 0.3s cubic-bezier(0.4, 0.4, 0, 1);
-        position: fixed;
-        top: 0;
-        right: 0;
-        z-index: var(--z-index-modal);
-        width: 466px;
-        height: 100vh;
-        padding: 0 40px 40px 40px;
-        display: flex;
-        flex-direction: column;
-        background-color: var(--color-white);
-
-        @include g.mq() {
-            inset: 0;
-            width: 100%;
-            padding: 0 24px 24px 24px;
-        }
-
-        &--open {
-            opacity: 1;
-            visibility: visible;
-            translate: 0 0;
-        }
-
-        &-button {
-            height: 80px;
-            display: flex;
-            flex-direction: row-reverse;
-            align-items: center;
-        }
-
-        &-list {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-            margin: 24px 0 0;
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            line-height: 1.4;
-            padding-left: 40px;
-
-            a {
-                transition: 0.3s;
-            }
-
-            a:hover {
-                opacity: 0.5;
-            }
-        }
-
-        &-cta-wrap {
-            display: flex;
-            gap: 8px;
-            margin-top: auto;
-
-            @include g.mq() {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    }
 }
 
-.l-header-cta-wrap > .l-header-cta {
-    @include g.mq(md) {
-        display: none;
-    }
+.l-header-nav-button-wrap {
+    font-size: 14px;
+    margin-top: auto;
 }

@@ -1,13 +1,9 @@
-.l-container,
-.l-container-s {
-    width: 100%;
-    margin-inline: auto;
-}
-
 .l-container {
-    max-width: var(--width-content);
+    margin-inline: auto;
+    max-width: min(90%, var(--width-content));
 }
 
 .l-container-s {
-    max-width: var(--width-content-s);
+    margin-inline: auto;
+    max-width: min(90%, var(--width-content-s));
 }

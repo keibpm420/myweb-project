@@ -2,88 +2,64 @@
 component > title
 ------------------------------
 */
-.c-title-level2 {
-    font-size: 44px;
+@use "../global" as g;
+
+.c-title-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.c-title {
+    width: fit-content;
+    font-size: 26px;
     font-weight: 700;
-    line-height: 1.4;
-    margin-top: 4px;
-    margin-bottom: 40px;
+    line-height: 1.2;
+    color: var(--color-base);
 
-    > span {
-        display: block;
-    }
-
-    &--white {
-        color: var(--color-white);
+    @include g.mq() {
+        font-size: 40px;
     }
 }
 
-.c-title-level2-english {
-    font-family: var(--font-family-inter);
-    font-size: 12px;
-    line-height: 1;
+.c-title--white {
+    color: var(--color-white);
+}
+
+.c-title-english {
+    font-family: var(--font-family-english);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
     text-transform: uppercase;
-    display: grid;
+    width: fit-content;
+    display: inline-grid;
     grid-template-columns: 8px 1fr;
     align-items: center;
     gap: 4px;
-    color: var(--color-primary);
+    background: var(--color-gradient) no-repeat center/cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    @include g.mq() {
+        font-size: 24px;
+    }
 
     &::before {
-        content: '';
+        content: "";
         display: inline-block;
         width: 100%;
         aspect-ratio: 1/1;
         border-radius: 50%;
-        background-color: var(--color-primary);
-    }
-
-    &--white {
-        color: var(--color-white);
-
-        &::before {
-            background-color: var(--color-white);
-        }
-    }
-
-    &--secondary {
-        color: var(--color-secondary);
-
-        &::before {
-            background-color: var(--color-secondary);
-        }
+        background: var(--color-gradient);
     }
 }
 
-.c-title-level3 {
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 1.4;
+.c-title-english--white {
     color: var(--color-white);
 
-    &--dark-gray {
-        color: var(--color-dark-gray);
-    }
-}
-
-.c-title-level4 {
-    margin-top: 80px;
-    margin-bottom: 24px;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 2;
-
-    display: grid;
-    grid-template-columns: 8px 1fr;
-    align-items: center;
-    gap: 4px;
-
     &::before {
-        content: '';
-        display: inline-block;
-        width: 100%;
-        aspect-ratio: 1/1;
-        border-radius: 50%;
-        background-color: var(--color-primary);
+        background: var(--color-white);
     }
 }

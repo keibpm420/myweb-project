@@ -1,0 +1,13 @@
+/*!
+global > font
+------------------------------
+*/
+@use "../global/breakpoints" as g;
+
+:root {
+    --header-height: 70px;
+
+    @include g.mq() {
+        --header-height: 96px;
+    }
+}

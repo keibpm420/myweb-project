@@ -3,7 +3,8 @@ global > z-index
 ------------------------------
 */
 :root {
-    --z-index-item: 10;
-    --z-index-overlay: 50;
     --z-index-modal: 100;
+    --z-index-header: 30;
+    --z-index-menu: 10;
+    --z-index-default: 1;
 }

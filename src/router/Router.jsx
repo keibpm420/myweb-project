@@ -1,33 +1,20 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from '../pages/Home';
-import Entry from '../pages/Entry';
-import Information from '../pages/Information';
-import Interview from '../pages/Interview';
-import News from '../pages/News';
-import Privacy from '../pages/Privacy';
-import Success from '../pages/Success';
-import NotFound from '../pages/NotFound';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Top from "../pages/Top";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Entry from "../pages/Entry";
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+const basename = import.meta.env.MODE === "production" ? "/project" : "/";
 
 const Router = () => {
     return (
-        <BrowserRouter basename="/project">
+        <BrowserRouter basename={basename}>
             <Header />
 
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/information" element={<Information />} />
-                <Route path="/interview" element={<Interview />} />
-                <Route path="/news" element={<News />} />
+                <Route path="/" element={<Top />} />
                 <Route path="/entry" element={<Entry />} />
-                <Route path="/privacy-policy" element={<Privacy />} />
-                <Route path="/success" element={<Success />} />
-
-                {/* 404 */}
-                <Route path="*" element={<NotFound />} />
             </Routes>
 
             <Footer />

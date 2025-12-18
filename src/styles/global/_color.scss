@@ -3,29 +3,14 @@ global > color
 ------------------------------
 */
 :root {
+    --color-base: #333333;
     --color-white: #ffffff;
-    --color-white20: #ffffff33;
-    --color-white50: #ffffff80;
-    --color-white70: #ffffffb3;
-
-    --color-dark-gray: #333333ff;
-    --color-dark-gray20: #33333333;
-    --color-dark-gray50: #33333380;
-
-    --color-primary-pastel: #e9edf7ff;
-
-    --color-primary: #1b52b0;
-    --color-primary10: #e7f0f9;
-    --color-primary20: #cfe1f3;
-
-    --color-primary80: #1b52b0cc;
-
-    --color-secondary: #ee9527;
-    --color-secondary5: #ee95270d;
-    --color-secondary70: #ee9527b3;
-
-    --color-background-base: linear-gradient(to right, #ffffff, #eef1f9);
-    --color-background: linear-gradient(270deg, #e9edf7, #ffffff);
-    --color-file-select: linear-gradient(0deg, #eeeeeeff, #ffffffff);
-    --color-link: #007cff;
+    --color-primary: #2c7bf1;
+    --color-primary10: #e9f2ff;
+    --color-orange: #fcaf17;
+    --color-red: #f35757;
+    --color-deep-blue: #2d5579;
+    --color-box-shadow: hsla(207, 6%, 61%, 0.15) 0px 7px 18px 0px;
+    --color-gradient: linear-gradient(to left, #0090f1ff, rgb(28, 0, 241));
+    --color-bg-base: #f8fcfd;
 }

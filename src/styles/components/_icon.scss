@@ -1,0 +1,67 @@
+@use "../global" as g;
+
+.c-icon {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    aspect-ratio: 1;
+    background-color: var(--color-white);
+    border-radius: 50%;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 30px;
+        aspect-ratio: 1;
+        mask-image: url("/img/icon-menu.svg");
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        background-color: var(--color-primary);
+    }
+}
+
+.c-icon--blue {
+    background-color: var(--color-primary);
+
+    &::before {
+        background-color: var(--color-primary10);
+    }
+}
+
+.c-icon--close {
+    &::before {
+        mask-image: url("/img/icon-close.svg");
+    }
+}
+
+.c-icon--arrow {
+    &::before {
+        width: 24px;
+        mask-image: url("/img/icon-arrow.svg");
+        rotate: 90deg;
+    }
+}
+
+.c-icon--position {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    translate: 0 -50%;
+
+    @include g.mq() {
+        right: 20px;
+    }
+}
+
+.c-icon--large {
+    width: 48px;
+
+    @include g.mq() {
+        width: 54px;
+    }
+
+    &::before {
+        width: 30px;
+    }
+}

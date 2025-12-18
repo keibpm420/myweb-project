@@ -8,8 +8,8 @@ $breakpoints: (
     'lg': 1366px,
 );
 
-@mixin mq($breakpoint: sm) {
-    @media screen and (max-width: #{map.get($breakpoints, $breakpoint)}) {
+@mixin mq($breakpoint: md) {
+    @media screen and (min-width: #{map.get($breakpoints, $breakpoint)}) {
         @content;
     }
 }

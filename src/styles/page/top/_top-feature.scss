@@ -1,0 +1,129 @@
+@use "../../global" as g;
+
+.top-feature {
+}
+
+.top-feature-title {
+    text-align: center;
+}
+
+.top-feature-title-wrap {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.top-feature-text {
+    font-size: 28px;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+    color: transparent;
+    background-clip: text;
+    background-image: var(--color-gradient);
+
+    @include g.mq() {
+        font-size: 40px;
+    }
+}
+
+.top-feature-text02 {
+    font-size: 20px;
+    letter-spacing: 0.05em;
+
+    @include g.mq() {
+        font-size: 28px;
+    }
+}
+
+.top-feature-text03 {
+    font-size: 24px;
+    letter-spacing: 0.05em;
+
+    @include g.mq() {
+        font-size: 28px;
+    }
+}
+
+.top-feature-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    counter-reset: feature;
+    margin-top: 64px;
+    gap: 50px;
+
+    @include g.mq() {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 70px;
+    }
+}
+
+.top-feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    counter-increment: feature;
+    padding: 24px;
+
+    @include g.mq() {
+        gap: 16px;
+    }
+
+    &::before {
+        content: counter(feature, decimal-leading-zero);
+        display: grid;
+        place-items: center;
+        width: 48px;
+        aspect-ratio: 1;
+        border-radius: 100vh;
+        background-image: var(--color-gradient);
+        color: var(--color-white);
+        font-size: 28px;
+        font-family: var(--font-family-english);
+        font-weight: normal;
+
+        @include g.mq() {
+            width: 64px;
+            font-size: 32px;
+        }
+    }
+}
+
+.top-feature-item-img {
+    width: 200px;
+    height: 150px;
+
+    @include g.mq() {
+        width: 240px;
+        height: 170px;
+    }
+
+    img {
+        height: 100%;
+    }
+}
+
+.top-feature-item-title {
+    font-size: 20px;
+
+    @include g.mq() {
+        font-size: 26px;
+    }
+}
+
+.top-feature-item-text {
+    margin-top: 4px;
+    font-size: 14px;
+    text-align: center;
+
+    @include g.mq() {
+        font-size: 15px;
+    }
+
+    span {
+        display: block;
+    }
+}

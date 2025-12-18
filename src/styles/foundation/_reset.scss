@@ -95,22 +95,22 @@ sub {
     vertical-align: text-bottom;
 }
 
-// input,
-// textarea,
-// select,
-// button {
-//     color: inherit;
-//     font-family: inherit;
-//     font-size: inherit;
-//     font-weight: inherit;
-//     line-height: inherit;
-//     font-size: 100%;
-//     border-radius: 0;
-//     border: none;
-//     appearance: none;
-//     -webkit-appearance: none;
-//     background-color: inherit;
-// }
+input,
+textarea,
+select,
+button {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    font-size: 100%;
+    border-radius: 0;
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: inherit;
+}
 
 input,
 textarea,

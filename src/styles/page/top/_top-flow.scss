@@ -1,0 +1,97 @@
+@use "../../global" as g;
+
+.top-flow {
+}
+
+.top-flow-wrap {
+    scrollbar-width: none;
+    margin-top: 20px;
+    padding: 40px 20px 20px;
+    overflow: scroll;
+}
+
+.top-flow-list {
+    grid-template-columns: 1fr 24px 1fr 24px 1fr;
+    gap: 20px;
+    min-width: 1080px;
+    display: grid;
+    counter-reset: step;
+}
+
+.top-flow-section {
+    background-color: var(--color-bg-base);
+    box-shadow: var(--color-box-shadow);
+    border-radius: 16px;
+    padding: 24px;
+    counter-increment: step;
+    position: relative;
+
+    &::before {
+        content: counter(step, decimal-leading-zero);
+        display: grid;
+        place-items: center;
+        width: 48px;
+        aspect-ratio: 1;
+        border-radius: 100vh;
+        background-image: var(--color-gradient);
+        color: var(--color-white);
+        font-size: 28px;
+        font-family: var(--font-family-english);
+        font-weight: normal;
+        position: absolute;
+        top: -18px;
+        left: 15px;
+
+        @include g.mq() {
+            width: 44px;
+            font-size: 22px;
+        }
+    }
+}
+
+.top-flow-step {
+    font-family: var(--font-family-english);
+    color: var(--color-primary);
+    background-color: var(--color-primary10);
+    border-radius: 100vh;
+    padding: 4px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    top: -10px;
+    left: 12px;
+}
+
+.top-flow-title {
+    align-items: baseline;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 0 6px;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    color: var(--color-deep-blue);
+}
+
+.top-flow-text {
+    color: var(--color-deep-blue);
+    margin-top: 6px;
+    padding: 0 6px;
+    font-size: 14px;
+
+    span {
+        display: block;
+    }
+}
+
+.top-flow-triangle {
+    aspect-ratio: 1;
+    background-color: var(--color-primary);
+    align-self: center;
+    display: block;
+    mask-image: url("/img/icon-arrow.svg");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    rotate: 90deg;
+}

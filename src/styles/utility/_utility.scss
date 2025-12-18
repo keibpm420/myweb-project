@@ -1,4 +1,25 @@
-// 余白関連
-.u-padding {
-    padding: 120px 48px !important;
+@use "../global" as g;
+
+.u-ptb {
+    padding-block: 64px !important;
+
+    @include g.mq() {
+        padding-block: 120px !important;
+    }
+}
+
+.u-hide--sp {
+    display: none !important;
+
+    @include g.mq() {
+        display: inline-flex !important;
+    }
+}
+
+.u-mb40 {
+    margin-bottom: 40px !important;
+}
+
+.u-color-primary {
+    color: var(--color-primary);
 }

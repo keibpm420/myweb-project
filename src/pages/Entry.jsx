@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 const Entry = () => {
     return (
-        <main className="entry u-padding">
+        <main className="entry u-ptb">
             <div className="l-container-s">
-                <div className="entry-title">
-                    <span className="c-title-level2-english c-title-level2-english--secondary">ENTRY</span>
-                    <h2 className="c-title-level3 c-title-level3--dark-gray">エントリーフォーム</h2>
+                <div className="c-title-wrap u-mb40">
+                    <span className="c-title-level1-english--secondary">ENTRY</span>
+                    <h2 className="c-title-level1">エントリーフォーム</h2>
                 </div>
 
                 <div className="entry-note">
@@ -16,9 +16,7 @@ const Entry = () => {
                         <span>※「必須」マークがある箇所は必ず入力してください。</span>
                     </p>
 
-                    <p className="entry-note-text02">
-                        ※入力内容の確認画面は表示されませんのでご注意ください。
-                    </p>
+                    <p className="entry-note-text02">※入力内容の確認画面は表示されませんのでご注意ください。</p>
                 </div>
 
                 <form method="" action="" className="entry-form">
@@ -28,13 +26,7 @@ const Entry = () => {
                                 <span className="c-form-label-name">姓</span>
                                 <span className="c-form-label-require">必須</span>
                             </label>
-                            <input
-                                required
-                                type="text"
-                                id="last-name"
-                                className="c-form-text"
-                                placeholder="田中"
-                            />
+                            <input required type="text" id="last-name" className="c-form-text" placeholder="田中" />
                         </div>
 
                         <div className="entry-form-input">
@@ -42,13 +34,7 @@ const Entry = () => {
                                 <span className="c-form-label-name">名</span>
                                 <span className="c-form-label-require">必須</span>
                             </label>
-                            <input
-                                type="text"
-                                id="first-name"
-                                className="c-form-text"
-                                placeholder="太郎"
-                                required
-                            />
+                            <input type="text" id="first-name" className="c-form-text" placeholder="太郎" required />
                         </div>
                     </div>
 
@@ -71,13 +57,7 @@ const Entry = () => {
                             <span className="c-form-label-name">電話番号</span>
                             <span className="c-form-label-require">必須</span>
                         </label>
-                        <input
-                            type="tel"
-                            id="tel"
-                            className="c-form-text"
-                            placeholder="000-1111-2222"
-                            required
-                        />
+                        <input type="tel" id="tel" className="c-form-text" placeholder="000-1111-2222" required />
                     </div>
 
                     <div className="entry-form-input">
@@ -121,19 +101,12 @@ const Entry = () => {
                                 <span className="c-form-label-name">職務経歴書</span>
                                 <span className="c-form-label-require">必須</span>
                             </div>
-                            <p className="c-form-label-note">
-                                （PDF、DOCX、XLSX等の書類ファイルのみ、10MB以下）
-                            </p>
+                            <p className="c-form-label-note">（PDF、DOCX、XLSX等の書類ファイルのみ、10MB以下）</p>
                         </div>
 
                         <label className="c-form-file-wrap">
                             ファイルを選択
-                            <input
-                                type="file"
-                                className="c-form-file"
-                                accept=".pdf,.doc,.docx,.xls,.xlsx"
-                                required
-                            />
+                            <input type="file" className="c-form-file" accept=".pdf,.doc,.docx,.xls,.xlsx" required />
                         </label>
                     </div>
 
@@ -143,19 +116,12 @@ const Entry = () => {
                                 <span className="c-form-label-name">履歴書</span>
                                 <span className="c-form-label-require">必須</span>
                             </div>
-                            <p className="c-form-label-note">
-                                （PDF、DOCX、XLSX等の書類ファイルのみ、10MB以下）
-                            </p>
+                            <p className="c-form-label-note">（PDF、DOCX、XLSX等の書類ファイルのみ、10MB以下）</p>
                         </div>
 
                         <label className="c-form-file-wrap">
                             ファイルを選択
-                            <input
-                                type="file"
-                                className="c-form-file"
-                                accept=".pdf,.doc,.docx,.xls,.xlsx"
-                                required
-                            />
+                            <input type="file" className="c-form-file" accept=".pdf,.doc,.docx,.xls,.xlsx" required />
                         </label>
                     </div>
 
