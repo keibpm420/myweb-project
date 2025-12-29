@@ -50,7 +50,7 @@
     grid-template-columns: repeat(1, 1fr);
     counter-reset: feature;
     margin-top: 64px;
-    gap: 50px;
+    gap: 28px;
 
     @include g.mq() {
         grid-template-columns: repeat(2, 1fr);

@@ -8,6 +8,6 @@ global > font
     --header-height: 70px;
 
     @include g.mq() {
-        --header-height: 96px;
+        --header-height: 90px;
     }
 }

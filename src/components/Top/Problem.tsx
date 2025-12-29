@@ -2,7 +2,32 @@ import React from "react";
 
 const Problem = () => {
     return (
-        <section className="top-problem u-ptb">
+        <section className="top-problem" id="problem">
+            <div className="top-problem-wave">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1512"
+                    height="137"
+                    viewBox="0 0 1512 137"
+                    fill="none"
+                >
+                    <g clipPath="url(#clip0_127_191)">
+                        <ellipse
+                            cx="756"
+                            cy="-172"
+                            rx="928"
+                            ry="309"
+                            fill="white"
+                        />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_127_191">
+                            <rect width="1512" height="137" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+            </div>
+
             <div className="l-container">
                 <div className="c-title-wrap u-mb40">
                     <span className="c-title-english c-title-english--white">

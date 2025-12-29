@@ -3,16 +3,17 @@ global > color
 ------------------------------
 */
 :root {
-    --color-base: #1f2937;
+    --color-primary: #2a86ff;
+    --color-gradient: linear-gradient(to right, #2476e2, #6eabff);
+    --color-base: #333;
     --color-white: #ffffff;
-    --color-primary: #1f6fd6;
     --color-primary10: #eef2ff;
     --color-orange: #f59e0b;
     --color-red: #ef4444;
     --color-deep-blue: #102b65;
-    --color-box-shadow: hsla(230, 30%, 40%, 0.15) 0px 10px 25px 0px;
-    --color-gradient: linear-gradient(to right, #1f6fd6, #3a8bfd);
+    --color-box-shadow: 0px 6px 10px #00317b26;
     --color-bg-base: #f9fafb;
+    --color-bg-blue: #daecf7;
 
     /* --color-font-base: #2e5579;
     --color-font-light: #a4b6c6;

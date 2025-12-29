@@ -1,0 +1,109 @@
+@use "../global" as g;
+
+.form {
+    margin-top: var(--header-height);
+}
+
+.form-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-item:last-child {
+    margin-bottom: 20px;
+
+    @include g.mq() {
+        margin-bottom: 40px;
+    }
+}
+
+.form-label {
+    display: flex;
+    gap: 8px;
+}
+
+.form-required {
+    background-color: var(--color-red);
+    color: var(--color-white);
+    border-radius: 4px;
+    padding: 0 4px;
+    font-size: 14px;
+    display: inline-grid;
+    place-items: center;
+
+    @include g.mq() {
+        font-size: 16px;
+    }
+}
+
+.form-note {
+    font-size: 14px;
+    color: var(--color-deep-blue);
+
+    @include g.mq() {
+        font-size: 16px;
+    }
+}
+
+.form-input {
+    background-color: var(--color-bg-base);
+    padding: 8px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.form-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px
+        color-mix(in srgb, var(--color-primary) 40%, transparent);
+}
+
+.form-any {
+    color: var(--color-deep-blue);
+    background-color: var(--color-bg-base);
+    padding: 4px;
+    border-radius: 4px;
+    font-size: 14px;
+    display: inline-grid;
+    place-items: center;
+
+    @include g.mq() {
+        font-size: 16px;
+    }
+}
+
+.form-textarea {
+    border-radius: 4px;
+    min-height: 200px;
+    background-color: var(--color-bg-base);
+    padding: 8px;
+    resize: vertical;
+}
+
+.form-textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px
+        color-mix(in srgb, var(--color-primary) 40%, transparent);
+}
+
+.form-error {
+    color: var(--color-red);
+    font-size: 15px;
+
+    @include g.mq() {
+        font-size: 16px;
+    }
+}
+
+.react-datepicker__close-icon::after {
+    &::after {
+        background-color: red;
+    }
+}

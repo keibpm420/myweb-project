@@ -1,6 +1,7 @@
 @use "../../global" as g;
 
 .top-service {
+    background-color: var(--color-primary);
 }
 
 .top-service-list {
@@ -28,7 +29,6 @@
     img {
         width: 50px;
         aspect-ratio: 1;
-        object-fit: cover;
     }
 }
 

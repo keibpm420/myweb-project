@@ -4,7 +4,7 @@
     padding-block: 64px !important;
 
     @include g.mq() {
-        padding-block: 120px !important;
+        padding-block: 100px !important;
     }
 }
 
@@ -22,4 +22,8 @@
 
 .u-color-primary {
     color: var(--color-primary);
+}
+
+.u-font-english {
+    font-family: var(--font-family-admin);
 }

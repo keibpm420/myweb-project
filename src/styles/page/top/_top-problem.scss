@@ -3,6 +3,27 @@
 .top-problem {
     background-color: var(--color-primary);
     color: var(--color-white);
+    position: relative;
+    padding: 100px 0 64px;
+
+    @include g.mq() {
+        padding: 240px 0 100px;
+    }
+}
+
+.top-problem-wave {
+    display: block;
+    width: 100%;
+    // height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    translate: 0 -1px;
+
+    svg {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .top-problem-title {

@@ -1,0 +1,200 @@
+:root {
+    --admin-color-font-base: #f0f6fc;
+    --admin-color-font-sub: #9198a1;
+    --admin-color-font-black: #000;
+    --admin-color-bg-base: #0c1117;
+    --admin-color-bg-black: #000;
+    --admin-color-bg-header: #020408;
+    --admin-color-bg-gray: #262c36;
+    --admin-color-bg-icon: #000;
+    --admin-color-bg-icon--hover: #15191e;
+    --admin-color-border: #3d444d;
+}
+
+.admin {
+    background-color: var(--admin-color-bg-base);
+    color: var(--admin-color-font-base);
+    font-size: 14px;
+}
+
+.admin-header {
+    border-bottom: 1px solid var(--admin-color-border);
+    background-color: var(--admin-color-bg-header);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    height: 56px;
+}
+
+.admin-heading {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.admin-mask {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.admin-sidebar {
+    background-color: var(--admin-color-bg-black);
+    border-right: 1px solid var(--admin-color-border);
+    border-radius: 0 16px 16px 0;
+    width: 300px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 16px;
+    transition: translate 0.2s;
+}
+
+.admin-sidebar--closed {
+    translate: -100% 0;
+}
+
+.admin-sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.admin-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 296px;
+    gap: 24px;
+    padding: 24px 60px;
+    position: relative;
+}
+
+.admin-container {
+    max-width: 1100px;
+    border: 1px solid var(--admin-color-border);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 12px;
+}
+
+.admin-table-row {
+    border-top: 1px solid var(--admin-color-border);
+}
+
+.admin-table-th,
+.admin-table-td {
+    padding: 16px;
+    height: 41px;
+}
+
+.admin-table-th:first-of-type {
+    width: 0;
+}
+
+.admin-table-th:nth-of-type(2) {
+    width: 120px;
+}
+
+.admin-table-th:nth-of-type(3) {
+    width: 250px;
+}
+
+.admin-table-th:nth-of-type(4) {
+    width: 160px;
+}
+
+.admin-table-td:nth-of-type(5) {
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+
+.admin-table-th:last-of-type {
+    width: 150px;
+}
+
+.admin-table-th {
+    font-weight: bold;
+    background-color: var(--admin-color-bg-gray);
+}
+
+.admin-table-td {
+    font-size: 13px;
+}
+
+.admin-table-td:last-of-type {
+    padding: 0;
+}
+
+.admin-table-actions {
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    gap: 16px;
+}
+
+/* 右側エリア全体のコンテナ */
+.admin-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: sticky;
+    top: 24px;
+    align-self: start;
+}
+
+/* 個別のカード */
+.admin-card {
+    background-color: var(--admin-color-bg-gray);
+    border: 1px solid var(--admin-color-border);
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* カードのタイトル（総予約数など） */
+.admin-card-title {
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* カードの数値・メインテキスト */
+.admin-card-value {
+    color: var(--admin-color-font-base);
+    font-size: 24px; /* 数値を強調 */
+    font-weight: bold;
+    margin: 0;
+}
+
+.admin-icon {
+    cursor: pointer;
+    user-select: none;
+    width: 32px;
+    aspect-ratio: 1;
+    background-color: var(--admin-color-bg-icon);
+    display: grid;
+    place-items: center;
+    border-radius: 6px;
+    border: 1px solid var(--admin-color-border);
+
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: var(--admin-color-bg-icon--hover);
+        }
+    }
+}
+
+.admin-icon--delete {
+    color: var(--color-red);
+}

@@ -5,15 +5,17 @@ const Service = () => {
         <section className="top-service u-ptb" id="service">
             <div className="l-container">
                 <div className="c-title-wrap u-mb40">
-                    <span className="c-title-english">service</span>
-                    <h2 className="c-title">サービス内容</h2>
+                    <span className="c-title-english c-title-english--white">
+                        service
+                    </span>
+                    <h2 className="c-title c-title--white">サービス内容</h2>
                 </div>
 
                 <ul className="top-service-list">
                     <li className="top-service-item">
                         <div className="top-service-img">
                             <img
-                                src="/img/icon-user.svg"
+                                src="/img/icon-handshake.svg"
                                 width="48"
                                 height="48"
                                 alt="個別就職相談"

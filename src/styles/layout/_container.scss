@@ -7,3 +7,8 @@
     margin-inline: auto;
     max-width: min(90%, var(--width-content-s));
 }
+
+.l-container-xs {
+    margin-inline: auto;
+    max-width: min(80%, var(--width-content-xs));
+}

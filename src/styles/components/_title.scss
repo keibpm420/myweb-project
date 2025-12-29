@@ -15,7 +15,6 @@ component > title
     font-size: 26px;
     font-weight: 700;
     line-height: 1.2;
-    color: var(--color-base);
 
     @include g.mq() {
         font-size: 40px;
@@ -61,5 +60,50 @@ component > title
 
     &::before {
         background: var(--color-white);
+    }
+}
+
+.c-title02-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.c-title02-english {
+    font-family: var(--font-family-english);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+    width: fit-content;
+    display: inline-grid;
+    grid-template-columns: 8px 1fr;
+    align-items: center;
+    gap: 4px;
+    background: var(--color-gradient) no-repeat center/cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    @include g.mq() {
+        font-size: 24px;
+    }
+
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background: var(--color-gradient);
+    }
+}
+
+.c-title02 {
+    font-weight: bold;
+    font-size: 36px;
+
+    @include g.mq() {
+        font-size: 40px;
     }
 }

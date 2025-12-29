@@ -1,0 +1,75 @@
+@use "../../global" as g;
+
+.top-faq {
+}
+
+.top-faq-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.top-faq-item {
+    background-color: var(--color-bg-base);
+    box-shadow: var(--color-box-shadow);
+    border-radius: 14px;
+}
+
+.top-faq-question {
+    cursor: pointer;
+    padding: 14px 50px 14px 16px;
+    font-weight: 600;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 16px;
+
+    @include g.mq(sm) {
+        font-size: 18px;
+    }
+
+    @include g.mq() {
+        font-size: 20px;
+    }
+
+    &::before {
+        content: "Q.";
+        display: block;
+        font-family: var(--font-family-english);
+        color: var(--color-primary);
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 30px;
+        aspect-ratio: 1;
+        background-color: var(--color-primary);
+        rotate: 45deg;
+        mask-image: url("/img/icon-close.svg");
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        translate: 0 8px;
+
+        @include g.mq() {
+            width: 34px;
+        }
+    }
+}
+
+.top-faq-answer {
+    margin-top: -12px;
+    padding: 0 16px 16px;
+    line-height: 2;
+    // font-weight: 500;
+    font-size: 16px;
+
+    @include g.mq() {
+        font-size: 18px;
+        padding: 0 24px 24px 54px;
+    }
+}
