@@ -6,13 +6,13 @@ export const reservationInsertSchema = z.object({
     date: z.date().refine((val) => val instanceof Date, {
         message: "日付は必須です",
     }),
-    message: z.string().optional(),
+    message: z.string().nullable().optional(),
 });
 
 export type ReservationInsert = z.infer<typeof reservationInsertSchema>;
 
 export const reservationSchema = reservationInsertSchema.extend({
-    id: z.string().uuid(),
+    id: z.uuid(),
     created_at: z.string(),
 });
 
@@ -22,5 +22,5 @@ export type Reservation = {
     email: string;
     date: string;
     message: string | null;
-    created_at: string;
+    status: string;
 };
