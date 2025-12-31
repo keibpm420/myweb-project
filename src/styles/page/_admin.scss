@@ -288,3 +288,97 @@
     border-color: #f85149;
     color: white;
 }
+
+/* --- 追加：更新モーダル用スタイル --- */
+
+/* モーダルの幅を編集用に少し広げる */
+.admin-modal--edit {
+    max-width: 500px;
+    text-align: left; /* 編集時は左寄せが見やすい */
+}
+
+.admin-modal-title {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* フォームレイアウト */
+.admin-edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* 入力要素の共通スタイル */
+.admin-edit-form input,
+.admin-edit-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: var(--admin-color-bg-base);
+    border: 1px solid var(--admin-color-border);
+    border-radius: 6px;
+    color: var(--admin-color-font-base);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.admin-edit-form input:focus,
+.admin-edit-form textarea:focus {
+    border-color: var(--admin-color-edit);
+}
+
+.admin-edit-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* 保存ボタンのバリエーション */
+.admin-btn--primary {
+    background-color: var(--admin-color-edit);
+    border-color: var(--admin-color-edit);
+    color: white;
+}
+
+.admin-btn--primary:hover {
+    opacity: 0.9;
+}
+
+.admin-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.admin-input {
+    background-color: var(--admin-color-bg-gray);
+    border: 1px solid var(--admin-color-border);
+    color: var(--admin-color-font-base);
+    padding: 8px 12px;
+    border-radius: 6px;
+    outline: none;
+}
+.admin-input:focus {
+    border-color: var(--admin-color-edit);
+}
+
+.admin-sidebar-link {
+    width: 100%;
+    text-align: left;
+    padding: 12px;
+    background: transparent;
+    border: none;
+    color: var(--admin-color-font-base);
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.admin-sidebar-link:hover {
+    background-color: var(--admin-color-bg-icon--hover);
+}
+
+.admin-sidebar-link.active {
+    background-color: var(--admin-color-edit);
+    color: white;
+}
