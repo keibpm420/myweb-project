@@ -1,0 +1,80 @@
+:root {
+    --login-bg: #f8f9fa;
+    --login-card-bg: #ffffff;
+    --login-primary: #2563eb;
+    --login-primary-hover: #1d4ed8;
+    --login-text: #1f2937;
+    --login-text-sub: #6b7280;
+    --login-border: #e5e7eb;
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--login-bg);
+    padding: 20px;
+}
+
+.login-form {
+    background: var(--login-card-bg);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* タイトルを付ける場合用 */
+.login-form::before {
+    content: "ログイン";
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--login-text);
+    margin-bottom: 10px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--login-border);
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.login-form input:focus {
+    border-color: var(--login-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--login-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.login-form button:hover:not(:disabled) {
+    background-color: var(--login-primary-hover);
+}
+
+.login-form button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    background-color: var(--login-text-sub);
+}

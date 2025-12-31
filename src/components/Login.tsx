@@ -1,42 +1,45 @@
 import { useState } from "react";
 import { supabase } from "../lib/supabase";
+import toast from "react-hot-toast";
 
 const Login = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
+    const [form, setForm] = useState({ email: "", password: "" });
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
 
-        const { data, error } = await supabase.auth.signInWithPassword({
-            email,
-            password,
-        });
+        const { error } = await supabase.auth.signInWithPassword(form);
 
         if (error) {
-            alert("ログイン失敗: " + error.message);
+            toast.error(`ログイン失敗: ${error.message}`);
+        } else {
+            toast.success("ログインしました");
         }
         setLoading(false);
     };
 
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setForm({ ...form, [e.target.type]: e.target.value });
+    };
+
     return (
         <div className="login-container">
-            <form onSubmit={handleLogin}>
+            <form onSubmit={handleLogin} className="login-form">
                 <input
                     type="email"
                     placeholder="メールアドレス"
-                    autoComplete="email"
-                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    onChange={handleChange}
                 />
                 <input
                     type="password"
                     placeholder="パスワード"
-                    autoComplete="current-password"
-                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    onChange={handleChange}
                 />
-                <button disabled={loading}>
+                <button type="submit" disabled={loading}>
                     {loading ? "ログイン中..." : "ログイン"}
                 </button>
             </form>

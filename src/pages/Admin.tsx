@@ -291,6 +291,7 @@ const Admin = () => {
                             className="admin-input"
                             value={filterStatus}
                             onChange={(e) => setFilterStatus(e.target.value)}
+                            style={{ textAlign: "center" }}
                         >
                             <option value="すべて">すべて</option>
                             <option value="未対応">未対応</option>
