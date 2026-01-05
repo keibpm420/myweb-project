@@ -1,6 +1,24 @@
-import React from "react";
+import { useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { CSSRulePlugin } from "gsap/CSSRulePlugin";
+
+gsap.registerPlugin(ScrollTrigger, CSSRulePlugin);
 
 const Problem = () => {
+    useEffect(() => {
+        const rule = CSSRulePlugin.getRule(".top-problem-text03::after");
+
+        gsap.to(rule, {
+            width: "100%",
+            scrollTrigger: {
+                trigger: ".top-problem-text03",
+                start: "top 80%",
+            },
+            duration: 0.5,
+        });
+    }, []);
+
     return (
         <section className="top-problem" id="problem">
             <div className="top-problem-wave">

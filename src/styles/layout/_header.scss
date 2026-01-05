@@ -13,6 +13,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    opacity: 0;
 
     @include g.mq() {
         padding-inline: 40px;
@@ -71,6 +72,7 @@
     border-radius: 100vh;
     padding: 0 24px;
     font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
 
     svg {
         width: 14px;
@@ -79,14 +81,28 @@
 }
 
 .l-header-button--reserve {
-    background-image: var(--color-gradient);
     border-color: var(--color-primary);
     color: var(--color-white);
+    background-color: var(--color-primary);
+
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+        }
+    }
 }
 
 .l-header-button--jobs {
     border-color: var(--color-primary);
     color: var(--color-primary);
+
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+    }
 }
 
 .l-header-icon {
@@ -121,9 +137,10 @@
     inset: 0 0 0 auto;
     z-index: var(--z-index-menu);
     background-color: var(--color-white);
-    width: 75%;
-    height: 100vh;
+    width: 300px;
+    height: 80vh;
     padding: 0 24px 24px 24px;
+    border-radius: 0 0 0 32px;
     display: flex;
     flex-direction: column;
 
@@ -140,26 +157,26 @@
 }
 
 .l-header-close-button-wrap {
-    height: 60px;
-    display: flex;
-    align-items: center;
-    flex-direction: row-reverse;
+    position: absolute;
+    top: 12px;
+    right: 24px;
 
     @include g.mq() {
-        height: 80px;
+        top: 20px;
+        right: 40px;
     }
 }
 
 .l-header-list {
-    margin-top: 20px;
+    margin-top: var(--header-height);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 28px;
+    gap: 36px;
+    height: 100%;
 
     @include g.mq() {
-        gap: 32px;
-        margin-top: 24px;
+        gap: 54px;
     }
 }
 
@@ -171,15 +188,11 @@
 .l-header-item a {
     width: 100%;
     display: block;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
     line-height: 1.4;
     letter-spacing: 0.1em;
     transition: opacity 0.2s;
-
-    @include g.mq() {
-        font-size: 14px;
-    }
 
     @media (any-hover: hover) {
         &:hover {

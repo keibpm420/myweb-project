@@ -5,10 +5,12 @@ import Service from "../components/Top/Service";
 import Flow from "../components/Top/Flow";
 import Faq from "../components/Top/Faq";
 import Interview from "../components/Top/Interview";
+import ScrollAnimations from "../components/animateAllTitles";
 
 const Top = () => {
     return (
         <main className="top">
+            <ScrollAnimations />
             <Mv />
 
             <Problem />

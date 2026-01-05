@@ -1,7 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
+import gsap from "gsap";
 
 const Header = () => {
+    const headerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!headerRef.current) return;
+
+        gsap.fromTo(
+            headerRef.current,
+            { opacity: 0 },
+            {
+                opacity: 1,
+                duration: 1,
+                ease: "power2.out",
+            }
+        );
+    }, []);
+
     const location = useLocation();
     const isHome = location.pathname === "/";
 
@@ -21,7 +38,7 @@ const Header = () => {
     ];
 
     return (
-        <header className="l-header">
+        <header className="l-header" ref={headerRef}>
             <h1 className="l-header-title">
                 <Link className="l-header-logo" to="/">
                     Career Center
@@ -53,6 +70,7 @@ const Header = () => {
                 <a
                     className="l-header-button l-header-button--jobs u-hide--sp"
                     href="https://www.tec-scs.jp/"
+                    target="_blank"
                 >
                     求人情報を見る
                     <svg
@@ -148,7 +166,7 @@ const Header = () => {
                         to="/reservations"
                         onClick={toggleHeaderMenu}
                     >
-                        相談の予約する
+                        相談の予約をする
                     </Link>
                 </div>
             </nav>

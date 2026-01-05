@@ -37,12 +37,43 @@
     flex-direction: column;
     gap: 12px;
     box-shadow: var(--color-box-shadow);
+    transition: background-color 0.3s, color 0.3s;
+
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: #f6a749;
+            color: var(--color-white);
+
+            .l-footer-button-label {
+                color: var(--color-white);
+            }
+
+            .l-footer-button-label,
+            .l-footer-button-title,
+            .l-footer-button-text {
+                translate: 0 -4px;
+            }
+
+            .l-footer-button-icon {
+                background-color: var(--color-white);
+
+                &::before {
+                    left: 7px;
+                }
+
+                svg {
+                    translate: 30px 0;
+                }
+            }
+        }
+    }
 }
 
 .l-footer-button-label {
     font-size: 14px;
     color: var(--color-primary);
     letter-spacing: 0;
+    transition: color 0.3s, translate 0.3s;
 
     @include g.mq() {
         font-size: 18px;
@@ -50,9 +81,10 @@
 }
 
 .l-footer-button-title {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.6;
-    font-weight: 500;
+    font-weight: bold;
+    transition: translate 0.3s;
 
     @include g.mq() {
         font-size: 28px;
@@ -61,6 +93,7 @@
 
 .l-footer-button-text {
     font-size: 14px;
+    transition: translate 0.3s;
 
     @include g.mq() {
         font-size: 15px;
@@ -75,12 +108,34 @@
     display: grid;
     place-items: center;
     align-self: end;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 28px;
+        aspect-ratio: 1;
+        mask-image: url("/img/icon-arrow.svg");
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        background-color: var(--color-primary);
+        rotate: 90deg;
+        position: absolute;
+        top: 50%;
+        left: -100%;
+        translate: 0 -50%;
+        transition: left 0.2s ease;
+    }
 
     svg {
         width: 25px;
         stroke: var(--color-white);
         aspect-ratio: 1;
         rotate: -90deg;
+        transition: translate 0.2s ease;
     }
 }
 
@@ -132,6 +187,13 @@
     gap: 8px;
     padding: 4px;
     width: fit-content;
+    transition: opacity 0.3s;
+
+    @media (any-hover: hover) {
+        &:hover {
+            opacity: 0.5;
+        }
+    }
 
     &::before {
         content: "";

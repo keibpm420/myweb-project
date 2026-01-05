@@ -13,11 +13,11 @@
 
     @include g.mq() {
         padding: 80px 40px 60px;
-        flex-direction: row;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr auto;
         align-items: center;
         gap: 40px;
-        height: calc(80dvh - var(--header-height));
+        // height: calc(80dvh - var(--header-height));
     }
 }
 
@@ -25,9 +25,6 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-}
-
-.top-mv-wrap {
 }
 
 .top-mv-text {
@@ -70,7 +67,7 @@
     display: inline-flex;
     flex-wrap: wrap;
     gap: 6px;
-    max-width: 260px;
+    max-width: 340px;
     margin-top: 14px;
 
     @include g.mq(sm) {
@@ -91,7 +88,7 @@
     border-radius: 16px;
     letter-spacing: 0.05em;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 12px;
 
     @include g.mq(sm) {
         font-size: 16px;
@@ -108,10 +105,10 @@
 }
 
 .top-mv-button-wrap {
-    order: 3;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    margin-top: 24px;
 
     @include g.mq(sm) {
         flex-direction: row;
@@ -134,6 +131,7 @@
     padding: 0 12px;
     border-radius: 100vh;
     font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
 
     @include g.mq() {
         width: 240px;
@@ -149,13 +147,25 @@
         mask-position: center;
         background-color: var(--color-white);
         translate: 0 1.5px;
+        transition: background-color 0.3s;
     }
 }
 
 .top-mv-button--reserve {
-    background-image: var(--color-gradient);
+    background-color: var(--color-primary);
     border: 2px solid var(--color-primary);
     color: var(--color-white);
+
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+
+            &::after {
+                background-color: var(--color-primary);
+            }
+        }
+    }
 
     &::after {
         mask-image: url("/img/icon-mail.svg");
@@ -165,6 +175,17 @@
 .top-mv-button--jobs {
     border: 2px solid var(--color-primary);
     color: var(--color-primary);
+
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+
+            &::after {
+                background-color: var(--color-white);
+            }
+        }
+    }
 
     &::after {
         mask-image: url("/img/icon-search02.svg");
@@ -179,9 +200,12 @@
         border-radius: 12px;
         object-fit: cover;
         aspect-ratio: 530 / 471;
-
-        @include g.mq(lg) {
-            width: 430px;
-        }
     }
+}
+
+.top-mv-text,
+.top-mv-text02,
+.top-mv-list li,
+.top-mv-button-wrap > * {
+    opacity: 0;
 }
