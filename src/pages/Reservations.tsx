@@ -1,19 +1,15 @@
 import { supabase } from "../lib/supabase";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
     reservationInsertSchema,
     ReservationInsert,
 } from "../schema/reservations.schema";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import { ja } from "date-fns/locale/ja";
 
 const Reservations = () => {
     const {
         register,
         handleSubmit,
-        control,
         reset,
         formState: { errors },
     } = useForm<ReservationInsert>({
@@ -100,42 +96,14 @@ const Reservations = () => {
                             ※ 30~60分程度を予定しています。
                         </p>
 
-                        <Controller
-                            name="date"
-                            control={control}
-                            render={({ field }) => {
-                                const selectedDate = field.value ?? null;
-
-                                const minTime = selectedDate
-                                    ? new Date(selectedDate)
-                                    : new Date();
-                                minTime.setHours(9, 0, 0);
-
-                                const maxTime = selectedDate
-                                    ? new Date(selectedDate)
-                                    : new Date();
-                                maxTime.setHours(18, 0, 0);
-
-                                return (
-                                    <DatePicker
-                                        locale={ja}
-                                        id="input-date"
-                                        className="form-input"
-                                        placeholderText="2026年01月01日 09:30"
-                                        selected={selectedDate}
-                                        onChange={(date) =>
-                                            field.onChange(date)
-                                        }
-                                        showTimeSelect
-                                        timeIntervals={30}
-                                        dateFormat="yyyy年MM月dd日 HH:mm"
-                                        timeFormat="HH:mm"
-                                        minDate={new Date()}
-                                        minTime={minTime}
-                                        maxTime={maxTime}
-                                    />
-                                );
-                            }}
+                        <input
+                            id="input-date"
+                            type="datetime-local"
+                            className="form-input"
+                            min={new Date().toISOString().slice(0, 16)}
+                            {...register("date", {
+                                valueAsDate: true,
+                            })}
                         />
 
                         {errors.date && (

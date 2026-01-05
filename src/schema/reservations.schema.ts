@@ -3,7 +3,7 @@ import { z } from "zod";
 export const reservationInsertSchema = z.object({
     name: z.string().nonempty({ message: "名前は必須です" }),
     email: z.email({ message: "メールアドレスの形式が正しくありません" }),
-    date: z.date().refine((val) => val instanceof Date, {
+    date: z.date({
         message: "日付は必須です",
     }),
     message: z.string().nullable().optional(),
