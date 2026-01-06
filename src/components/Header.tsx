@@ -69,7 +69,7 @@ const Header = () => {
 
                 <a
                     className="l-header-button l-header-button--jobs u-hide--sp"
-                    href="https://www.tec-scs.jp/"
+                    href="/"
                     target="_blank"
                 >
                     求人情報を見る

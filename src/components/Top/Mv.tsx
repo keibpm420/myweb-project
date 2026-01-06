@@ -87,7 +87,7 @@ const Mv = () => {
 
                         <a
                             className="top-mv-button top-mv-button--jobs"
-                            href="https://www.tec-scs.jp/"
+                            href="/"
                             target="_blank"
                         >
                             求人情報を見る

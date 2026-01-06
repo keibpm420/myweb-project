@@ -34,11 +34,7 @@ const Footer = () => {
                     </div>
                 </Link>
 
-                <a
-                    className="l-footer-button"
-                    href="https://www.tec-scs.jp"
-                    target="_blank"
-                >
+                <a className="l-footer-button" href="/" target="_blank">
                     <span className="l-footer-button-label">Jobs</span>
                     <h2 className="l-footer-button-title">求人情報を見る</h2>
                     <p className="l-footer-button-text">
