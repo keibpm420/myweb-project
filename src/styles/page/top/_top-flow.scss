@@ -1,8 +1,5 @@
 @use "../../global" as g;
 
-.top-flow {
-}
-
 .top-flow-note {
     color: var(--color-deep-blue);
     font-weight: bold;
@@ -25,29 +22,37 @@
     scrollbar-width: none;
     margin-top: 20px;
     padding: 20px;
-    overflow-x: auto;
     overflow-y: hidden;
 }
 
 .top-flow-list {
+    margin-inline: auto;
+    display: grid;
     grid-template-columns: 1fr 24px 1fr 24px 1fr;
     gap: 20px;
-    min-width: 1100px;
-    display: grid;
+    min-width: 900px;
     counter-reset: step;
+
+    @include g.mq() {
+        max-width: 1100px;
+    }
 }
 
 .top-flow-section {
     background-color: var(--color-bg-base);
     box-shadow: var(--color-box-shadow);
     border-radius: 16px;
-    padding: 24px;
+    padding: 16px;
     counter-increment: step;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     text-align: center;
+
+    @include g.mq() {
+        padding: 24px;
+    }
 
     &::before {
         content: counter(step, decimal-leading-zero);
@@ -71,15 +76,23 @@
 
 .top-flow-title {
     gap: 8px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     display: flex;
     color: var(--color-deep-blue);
+
+    @include g.mq() {
+        font-size: 20px;
+    }
 }
 
 .top-flow-text {
     color: var(--color-deep-blue);
-    font-size: 14px;
+    font-size: 12px;
+
+    @include g.mq() {
+        font-size: 14px;
+    }
 
     span {
         display: block;

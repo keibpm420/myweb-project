@@ -1,34 +1,79 @@
 <!DOCTYPE html>
+<!-- HTML5で書くことを宣言 -->
 <html lang="ja">
     <head>
+        <!-- 文字コード（UTF-8固定。最優先で書く） -->
         <meta charset="utf-8" />
+
+        <!-- レスポンシブ対応（スマホ・PCで正しく表示） -->
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+        <!-- ページタイトル（検索結果・タブに表示される） -->
         <title>キャリアセンター | Career Center</title>
+
+        <!-- ページ概要（検索結果の説明文に使われる） -->
         <meta
             name="description"
             content="キャリアセンターでは就職相談・求人情報・キャリア支援を提供しています。"
         />
+
+        <!-- 電話番号の自動リンク化を防ぐ（日本向けサイトでよく使う） -->
         <meta name="format-detection" content="telephone=no" />
 
-        <!-- favicon/webclipicon -->
+        <!-- =====================
+             favicon / webclip
+             ===================== -->
+
+        <!-- ブラウザ用ファビコン（古いブラウザ対応） -->
         <link rel="icon" href="favicon.ico" />
+
+        <!-- SVG対応ブラウザ用ファビコン（最近の主流） -->
         <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+        <!-- iOSのホーム画面追加用アイコン -->
         <link rel="apple-touch-icon" href="webclip.png" />
 
-        <!-- ogp -->
+        <!-- =====================
+             OGP（SNS共有用）
+             ===================== -->
+
+        <!-- サイト名 -->
         <meta property="og:site_name" content="サイト名" />
+
+        <!-- ページURL（本番では絶対URLを書く） -->
         <meta property="og:url" content="URL" />
+
+        <!-- ページの種類（通常は website / 記事は article） -->
         <meta property="og:type" content="website or article" />
+
+        <!-- SNSで表示されるタイトル -->
         <meta property="og:title" content="ページのタイトル" />
+
+        <!-- SNSで表示される説明文 -->
         <meta property="og:description" content="ページの説明" />
+
+        <!-- SNSで表示される画像（1200×630 推奨） -->
         <meta property="og:image" content="URL" />
+
+        <!-- 言語・地域（日本向け） -->
         <meta property="og:locale" content="ja_JP" />
+
+        <!-- Facebookアプリ連携時のみ使用 -->
         <!-- <meta property="fb:app_id" content="AppID"> -->
+
+        <!-- Twitterカードの種類 -->
         <meta name="twitter:card" content="summary_large_image or summary" />
+
+        <!-- サイトの公式Twitterがある場合 -->
         <!-- <meta name="twitter:site" content="@moshamusha2010" /> -->
+
+        <!-- Twitter用の説明文 -->
         <meta name="twitter:description" content="ページの説明" />
+
+        <!-- Twitter用の画像 -->
         <meta name="twitter:image:src" content="URL" />
 
+        <!-- 開発中は noindex、本番では index,follow にする -->
         <meta name="robots" content="noindex,nofollow" />
 
         <!-- font -->
@@ -40,7 +85,10 @@
         />
     </head>
     <body>
+        <!-- Reactが描画されるルート要素 -->
         <div id="root"></div>
+
+        <!-- Vite + React のエントリーポイント -->
         <script type="module" src="./src/main.tsx"></script>
     </body>
 </html>

@@ -17,7 +17,7 @@
 
 .top-faq-question {
     cursor: pointer;
-    padding: 14px 50px 14px 16px;
+    padding: 14px;
     font-weight: 600;
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -54,6 +54,7 @@
         mask-repeat: no-repeat;
         mask-position: center;
         translate: 0 8px;
+        transition: rotate 0.3s ease;
 
         @include g.mq() {
             width: 34px;
@@ -65,11 +66,14 @@
     margin-top: -12px;
     padding: 0 16px 16px;
     line-height: 2;
-    // font-weight: 500;
     font-size: 16px;
 
     @include g.mq() {
         font-size: 18px;
         padding: 0 24px 24px 54px;
     }
+}
+
+.top-faq-item[open] .top-faq-question::after {
+    rotate: 135deg;
 }
