@@ -73,7 +73,10 @@ const Footer = () => {
             </div>
 
             <small className="l-footer-copy">
-                © 2025 TOKYO ELECTRONICS COLLEGE.
+                <span>© 2025 TOKYO ELECTRONICS COLLEGE.</span>
+                <span>
+                    Emoji by Google Noto Emoji, licensed under Apache 2.0{" "}
+                </span>
             </small>
         </footer>
     );

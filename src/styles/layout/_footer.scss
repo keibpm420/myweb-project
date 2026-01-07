@@ -215,4 +215,8 @@
     @include g.mq() {
         text-align: right;
     }
+
+    span {
+        display: block;
+    }
 }

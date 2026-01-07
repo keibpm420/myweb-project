@@ -1,36 +1,4 @@
-import { useLayoutEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
 const Service = () => {
-    useLayoutEffect(() => {
-        // サービスカード
-        gsap.fromTo(
-            ".top-service-item",
-            {
-                y: 32,
-                opacity: 0,
-                scale: 0.96,
-            },
-            {
-                y: 0,
-                opacity: 1,
-                scale: 1,
-                duration: 0.8,
-                stagger: 0.2,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: ".top-service-list",
-                    start: "top 80%",
-                },
-            }
-        );
-
-        ScrollTrigger.refresh();
-    }, []);
-
     return (
         <section className="top-service u-ptb" id="service">
             <div className="l-container">
