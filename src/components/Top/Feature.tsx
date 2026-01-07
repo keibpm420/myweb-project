@@ -1,6 +1,63 @@
-import React from "react";
+import { useLayoutEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Feature = () => {
+    useLayoutEffect(() => {
+        // タイトル全体（wrap）
+        gsap.fromTo(
+            ".top-feature-title",
+            { y: 24, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".top-feature-title",
+                    start: "top 85%",
+                },
+            }
+        );
+
+        // サブタイトル（最後の1行）
+        gsap.fromTo(
+            ".top-feature-text03",
+            { y: 16, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.6,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".top-feature-title",
+                    start: "top 80%",
+                },
+            }
+        );
+
+        // カード一覧
+        gsap.fromTo(
+            ".top-feature-item",
+            { y: 40, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                stagger: 0.25,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".top-feature-list",
+                    start: "top 80%",
+                },
+            }
+        );
+
+        ScrollTrigger.refresh();
+    }, []);
+
     return (
         <section className="top-feature u-ptb" id="feature">
             <div className="l-container">

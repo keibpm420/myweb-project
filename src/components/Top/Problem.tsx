@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
@@ -6,17 +6,53 @@ import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 gsap.registerPlugin(ScrollTrigger, CSSRulePlugin);
 
 const Problem = () => {
-    useEffect(() => {
+    useLayoutEffect(() => {
+        // underline
         const rule = CSSRulePlugin.getRule(".top-problem-text03::after");
-
         gsap.to(rule, {
             width: "100%",
+            duration: 0.5,
             scrollTrigger: {
                 trigger: ".top-problem-text03",
                 start: "top 80%",
             },
-            duration: 0.5,
         });
+
+        // リード文
+        gsap.fromTo(
+            ".top-problem-read span",
+            { y: 20, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                stagger: 0.25,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".top-problem-read",
+                    start: "top 85%",
+                },
+            }
+        );
+
+        // カード
+        gsap.fromTo(
+            ".top-problem-item",
+            { y: 40, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                stagger: 0.25,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".top-problem-list",
+                    start: "top 80%",
+                },
+            }
+        );
+
+        ScrollTrigger.refresh();
     }, []);
 
     return (
