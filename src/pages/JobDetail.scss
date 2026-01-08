@@ -1,0 +1,29 @@
+.p-job-detail {
+    padding: 40px 0;
+    &__card {
+        background: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        margin-top: 20px;
+    }
+    &__title {
+        font-size: 2rem;
+        margin: 20px 0;
+    }
+    &__content {
+        line-height: 1.8;
+        margin-bottom: 30px;
+        white-space: pre-wrap;
+    }
+}
+
+.c-button--back {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}

@@ -2,9 +2,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Top from "../pages/Top";
 import Reservations from "../pages/Reservations";
 import Admin from "../pages/Admin";
-import Test from "../pages/Test";
+import Job from "../pages/Job";
 import DefaultLayout from "../layouts/DefaultLayout";
 import AdminLayout from "../layouts/AdminLayout";
+import JobDetail from "../pages/JobDetail";
 
 const Router = () => {
     return (
@@ -13,11 +14,12 @@ const Router = () => {
                 <Route element={<DefaultLayout />}>
                     <Route path="/" element={<Top />} />
                     <Route path="/reservations" element={<Reservations />} />
+                    <Route path="/job" element={<Job />} />
+                    <Route path="/job/:id" element={<JobDetail />} />
                 </Route>
 
                 <Route element={<AdminLayout />}>
                     <Route path="/admin" element={<Admin />} />
-                    <Route path="/test" element={<Test />} />
                 </Route>
             </Routes>
         </BrowserRouter>

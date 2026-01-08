@@ -85,13 +85,12 @@ const Mv = () => {
                             相談の予約をする
                         </Link>
 
-                        <a
+                        <Link
                             className="top-mv-button top-mv-button--jobs"
-                            href="/"
-                            target="_blank"
+                            to="/job"
                         >
                             求人情報を見る
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

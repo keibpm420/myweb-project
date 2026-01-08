@@ -34,7 +34,7 @@ const Footer = () => {
                     </div>
                 </Link>
 
-                <a className="l-footer-button" href="/" target="_blank">
+                <Link className="l-footer-button" to="/job">
                     <span className="l-footer-button-label">Jobs</span>
                     <h2 className="l-footer-button-title">求人情報を見る</h2>
                     <p className="l-footer-button-text">
@@ -53,12 +53,12 @@ const Footer = () => {
                             />
                         </svg>
                     </div>
-                </a>
+                </Link>
             </div>
 
             <div className="l-footer-body">
                 <Link className="l-footer-logo" to="/">
-                    <h2>Career Center</h2>
+                    <h2>Career Center One</h2>
                 </Link>
 
                 <ul className="l-footer-nav">
