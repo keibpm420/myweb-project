@@ -1,10 +1,10 @@
-export const config = { runtime: "edge" };
+export const runtime = "edge";
 
 export default async function handler(req) {
     const auth = req.headers.get("authorization");
 
-    const user = import.meta.env.VITE_BASIC_AUTH_USER;
-    const pass = import.meta.env.VITE_BASIC_AUTH_PASSWORD;
+    const user = process.env.BASIC_AUTH_USER;
+    const pass = process.env.BASIC_AUTH_PASSWORD;
 
     if (!auth) {
         return new Response("Unauthorized", {
