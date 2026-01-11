@@ -1,13 +1,8 @@
 {
     "functions": {
-        "api/auth.js": {
+        "./api/auth.js": {
             "runtime": "edge@1"
         }
     },
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/api/auth.js"
-        }
-    ]
+    "routes": [{ "src": "/(.*)", "dest": "/api/auth.js" }]
 }
