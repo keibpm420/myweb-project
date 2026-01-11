@@ -1,8 +1,9 @@
 export default async function handler(req) {
     const auth = req.headers.get("authorization");
 
-    const user = process.env.BASIC_AUTH_USER;
-    const pass = process.env.BASIC_AUTH_PASSWORD;
+    // process.env → import.meta.env に置き換え
+    const user = import.meta.env.VITE_BASIC_AUTH_USER;
+    const pass = import.meta.env.VITE_BASIC_AUTH_PASSWORD;
 
     if (!auth) {
         return new Response("Unauthorized", {

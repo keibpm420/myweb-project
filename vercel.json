@@ -1,6 +1,6 @@
 {
     "functions": {
-        "./api/auth.js": {
+        "api/auth.js": {
             "runtime": "edge@1"
         }
     },
