@@ -15,7 +15,7 @@ const Mv = () => {
             gsap.to(textRef.current, {
                 opacity: 1,
                 y: 0,
-                duration: 1,
+                duration: 2,
                 ease: "power2.out",
                 delay: 0.1,
             });
@@ -23,7 +23,7 @@ const Mv = () => {
             gsap.to(text02Ref.current, {
                 opacity: 1,
                 y: 0,
-                duration: 1,
+                duration: 2,
                 ease: "power2.out",
                 delay: 0.2,
             });
@@ -31,24 +31,23 @@ const Mv = () => {
             gsap.to(listRef.current?.children, {
                 opacity: 1,
                 y: 0,
-                duration: 1,
+                duration: 3,
                 ease: "power2.out",
                 delay: 0.4,
             });
             // ボタン
             gsap.to(buttonWrapRef.current?.children, {
                 opacity: 1,
-                duration: 1,
+                duration: 3,
                 ease: "power2.out",
                 delay: 0.4, // リストのあと少し遅らせる
             });
 
             gsap.from(imageRef.current, {
                 opacity: 0,
-                scale: 0.95,
-                duration: 1,
+                x: 500,
+                duration: 2,
                 ease: "power2.out",
-                delay: 0.2, // 少し遅らせて最後に
             });
         });
 
@@ -78,17 +77,11 @@ const Mv = () => {
                     </ul>
 
                     <div className="top-mv-button-wrap" ref={buttonWrapRef}>
-                        <Link
-                            className="top-mv-button top-mv-button--reserve"
-                            to="/reservations"
-                        >
+                        <Link className="top-mv-button top-mv-button--reserve" to="/reservations">
                             相談の予約をする
                         </Link>
 
-                        <Link
-                            className="top-mv-button top-mv-button--jobs"
-                            to="/job"
-                        >
+                        <Link className="top-mv-button top-mv-button--jobs" to="/job">
                             求人情報を見る
                         </Link>
                     </div>
@@ -96,13 +89,7 @@ const Mv = () => {
             </div>
 
             <div className="top-mv-image" ref={imageRef}>
-                <img
-                    src="/img/img-support04.jpg"
-                    width="530"
-                    height="471"
-                    alt=""
-                    decoding="async"
-                />
+                <img src="/img/img-support04.jpg" width="530" height="471" alt="" decoding="async" />
             </div>
         </div>
     );

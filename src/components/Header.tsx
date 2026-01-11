@@ -42,7 +42,7 @@ const Header = () => {
         <header className="l-header" ref={headerRef}>
             <h1 className="l-header-title">
                 <Link className="l-header-logo" to="/">
-                    Career Center One
+                    Career Center <span>One</span>
                 </Link>
             </h1>
 
