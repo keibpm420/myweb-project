@@ -1,13 +1,14 @@
 import { useLayoutEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
 
 const Mv = () => {
     const textRef = useRef(null);
     const text02Ref = useRef(null);
     const listRef = useRef(null);
     const buttonWrapRef = useRef(null);
-    const imageRef = useRef(null);
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
@@ -41,13 +42,6 @@ const Mv = () => {
                 duration: 3,
                 ease: "power2.out",
                 delay: 0.4, // リストのあと少し遅らせる
-            });
-
-            gsap.from(imageRef.current, {
-                opacity: 0,
-                x: 500,
-                duration: 2,
-                ease: "power2.out",
             });
         });
 
@@ -88,9 +82,30 @@ const Mv = () => {
                 </div>
             </div>
 
-            <div className="top-mv-image" ref={imageRef}>
-                <img src="/img/img-support04.jpg" width="530" height="471" alt="" decoding="async" />
-            </div>
+            <Splide
+                className="top-mv-image"
+                options={{
+                    type: "fade", // フェード切り替え
+                    rewind: true, // 最後→最初
+                    autoplay: true, // 自動再生
+                    interval: 3000, // 切り替え時間
+                    speed: 1500, // フェード速度
+                    arrows: false,
+                    pagination: false,
+                    pauseOnHover: false,
+                    pauseOnFocus: false,
+                }}
+            >
+                <SplideSlide>
+                    <img src="/img/img-support04.jpg" width="530" height="471" alt="" decoding="async" />
+                </SplideSlide>
+                <SplideSlide>
+                    <img src="/img/img-support03.jpg" width="530" height="471" alt="" decoding="async" />
+                </SplideSlide>
+                <SplideSlide>
+                    <img src="/img/img-support02.jpg" width="530" height="471" alt="" decoding="async" />
+                </SplideSlide>
+            </Splide>
         </div>
     );
 };
