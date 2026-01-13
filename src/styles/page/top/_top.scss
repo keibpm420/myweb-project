@@ -1,1 +1,49 @@
 @use "../../global" as g;
+
+.top-followBtn {
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+
+    @include g.mq() {
+        display: none;
+    }
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    a {
+        display: block;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        position: relative;
+        background-color: var(--color-primary);
+        padding: 20px 0;
+        margin: 6px;
+    }
+    .a {
+        background-color: var(--color-orange);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+
+        &::after {
+            content: "";
+            display: block;
+            background-image: url("/img/icon-finger.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 30px;
+            aspect-ratio: 1;
+        }
+    }
+}
